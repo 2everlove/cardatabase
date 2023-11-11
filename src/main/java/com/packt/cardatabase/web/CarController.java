@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.packt.cardatabase.domain.Car;
-import com.packt.cardatabase.domain.CarRepository;
+import com.packt.cardatabase.persistence.CarRepository;
 
 @RestController
 public class CarController {

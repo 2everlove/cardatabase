@@ -9,9 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Builder
+@AllArgsConstructor
 @Entity
 @NoArgsConstructor
 @Data
@@ -27,16 +31,4 @@ public class Car {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="owner")
 	private Owner owner;
-	
-	public Car(String brand, String model, String color, 
-			String registerNumber, int year, int price, Owner owner) {
-		super();
-		this.brand = brand;
-		this.model = model;
-		this.color = color;
-		this.registerNumber = registerNumber;
-		this.year = year;
-		this.price = price;
-		this.owner = owner;
-	}
 }

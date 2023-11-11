@@ -12,9 +12,13 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Builder
+@AllArgsConstructor
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @NoArgsConstructor
@@ -28,10 +32,4 @@ public class Owner {
 	@JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="owner")
 	private List<Car> cars;
-	
-	public Owner(String firstname, String lastname) {
-		super();
-		this.firstname = firstname;
-		this.lastname = lastname;
-	}
 }

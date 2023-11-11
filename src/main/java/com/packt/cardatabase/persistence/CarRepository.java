@@ -1,9 +1,11 @@
-package com.packt.cardatabase.domain;
+package com.packt.cardatabase.persistence;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+
+import com.packt.cardatabase.domain.Car;
 
 //@RepositoryRestResource(path="vehicles")
 public interface CarRepository extends org.springframework.data.repository.CrudRepository<Car, Long> {

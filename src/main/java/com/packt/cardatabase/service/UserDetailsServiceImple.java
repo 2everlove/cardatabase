@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.packt.cardatabase.domain.User;
-import com.packt.cardatabase.domain.UserRepository;
+import com.packt.cardatabase.persistence.UserRepository;
 
 @Service
 public class UserDetailsServiceImple implements UserDetailsService {

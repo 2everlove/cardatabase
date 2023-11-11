@@ -7,9 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Builder
+@AllArgsConstructor
 @Table(name="`user`")
 @Entity
 @NoArgsConstructor
@@ -27,11 +31,4 @@ public class User {
 	
 	@Column(nullable=false)
 	private String role;
-	
-	public User(String username, String password, String role) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.role = role;
-	}
 }

@@ -1,4 +1,4 @@
-package com.packt.cardatabase;
+package com.packt.cardatabase.service;
 
 import java.util.List;
 

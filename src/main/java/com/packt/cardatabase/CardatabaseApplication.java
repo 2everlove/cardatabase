@@ -12,16 +12,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.packt.cardatabase.domain.Car;
 import com.packt.cardatabase.dto.CarDTO;
-import com.packt.cardatabase.persistence.CarRepository;
 import com.packt.cardatabase.persistence.OwnerRepository;
 import com.packt.cardatabase.persistence.UserRepository;
+import com.packt.cardatabase.service.CarService;
 
 @SpringBootApplication
 public class CardatabaseApplication implements CommandLineRunner {
 
 	private static final Logger logger = 
 			LoggerFactory.getLogger(CardatabaseApplication.class);
-	
+	/*
 	@Autowired
 	private CarService cservice;
 	
@@ -30,7 +30,7 @@ public class CardatabaseApplication implements CommandLineRunner {
 	
 	@Autowired
 	private UserRepository urpository;
-	
+	*/
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CardatabaseApplication.class, args);
@@ -46,14 +46,16 @@ public class CardatabaseApplication implements CommandLineRunner {
 		//repository.save(new Car("Ford", "Mustang", "Red", "ADF-1121", 2021, 59000, owner1));
 		//repository.save(new Car("Nissan", "Leaf", "White", "SSJ-3002", 2019, 29000, owner2));
 		//repository.save(new Car("Toyota", "Prius", "Silver", "KKO-0211", 2020, 39000, owner2));
-		
+		/*
 		List<Car> carEntites = cservice.findAll();
-		List<CarDTO> carDtos = carEntites.stream().map(CarDTO::new).collect(Collectors.toList());
-		
-		for(CarDTO car : carDtos) {
-			logger.info(car.getBrand() + " " + car.getModel());
+		if(!carEntites.isEmpty()) {
+			List<CarDTO> carDtos = carEntites.stream().map(CarDTO::new).collect(Collectors.toList());
+			
+			for(CarDTO car : carDtos) {
+				logger.info(car.getBrand() + " " + car.getModel());
+			}
 		}
-		
+		*/
 		// username:user, password:user
 		//urpository.save(new User("user", "$2y$10$W8okcVgP7n4dScIBb0MMxuxtjoI0ipuat0iJp/nUawetv7RiqvUoy", "USER"));
 		// username:admin, password:admin

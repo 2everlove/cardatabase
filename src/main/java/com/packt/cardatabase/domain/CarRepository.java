@@ -3,7 +3,9 @@ package com.packt.cardatabase.domain;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
+//@RepositoryRestResource(path="vehicles")
 public interface CarRepository extends org.springframework.data.repository.CrudRepository<Car, Long> {
 
 	List<Car> findByBrandAndModel(String brand, String model);
@@ -12,14 +14,15 @@ public interface CarRepository extends org.springframework.data.repository.CrudR
 	
 	List<Car> findByBrandOrderByYear(String brand);
 	
-	@Query("select c from Car c where c.brand = ?1")
-	List<Car> findByBrand(String brand);
+	//@Query("select c from Car c where c.brand = ?1")
+	//List<Car> findByBrand(String brand);
 	
 	@Query("select c from Car c where c.brand like ?1")
 	List<Car> findByBrandEndsWith(String brand);
 	
-	List<Car> findByColor(String color);
+	List<Car> findByColor(@Param("color") String color);
 	
 	List<Car> findByYear(int year);
 	
+	List<Car> findByBrand(@Param("brand") String brand);
 }
